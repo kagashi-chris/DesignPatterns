@@ -1,4 +1,4 @@
-package com.zhen.designPatterns.behavioral.CommandPattern;
+package com.zhen.designPatterns.behavioral.commandPattern;
 
 public class TurnOnCommand implements ICommand{
 
