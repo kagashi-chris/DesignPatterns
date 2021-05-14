@@ -50,25 +50,55 @@ public class User {
         this.newsletter = newsletter;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", email='" + email + '\'' +
+                ", newsletter=" + newsletter +
+                '}';
+    }
+
     public static class UserBuilder
     {
+        //required properties
         private String name;
+        //optional properties
         private int id;
         private String email;
         private boolean newsletter;
 
-        public UserBuilder(String name, int id, String email) {
+        public UserBuilder(String name) {
             this.name = name;
-            this.id = id;
-            this.email = email;
-            this.newsletter = false;
+
         }
 
-        public UserBuilder wantNewsletter(boolean newsletter)
+        public UserBuilder setName(String name)
+        {
+            this.name = name;
+            return this;
+        }
+
+        public UserBuilder setId(int id)
+        {
+            this.id = id;
+            return this;
+        }
+
+        public UserBuilder setEmail(String email)
+        {
+            this.email = email;
+            return this;
+        }
+
+        public UserBuilder setNewsletter(boolean newsletter)
         {
             this.newsletter = newsletter;
             return this;
         }
+
+
 
         public User build()
         {

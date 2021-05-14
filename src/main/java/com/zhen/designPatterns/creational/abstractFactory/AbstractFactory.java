@@ -1,9 +1,17 @@
 package com.zhen.designPatterns.creational.abstractFactory;
 
+import com.zhen.designPatterns.creational.factory.Product;
+
 public abstract class AbstractFactory {
 
-    public abstract Product getLock();
+    private char lockAndKeySetType;
 
-    public abstract Product getKey();
+    public AbstractFactory(char lockAndKeySetType) {
+        this.lockAndKeySetType = lockAndKeySetType;
+    }
+
+    public abstract Lock getLock();
+
+    public abstract Key getKey();
 
 }

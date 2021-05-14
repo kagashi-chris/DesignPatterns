@@ -1,8 +1,10 @@
 package com.zhen.designPatterns.creational.abstractFactory;
 
-public class KeyProductOne extends Product{
+public class KeyProductOne extends Key{
 
-    public String getProductType() {
-        return "Key Type One";
+    private char lockAndKeySetType = '1';
+
+    public char getLockAndKeySetType() {
+        return lockAndKeySetType;
     }
 }
