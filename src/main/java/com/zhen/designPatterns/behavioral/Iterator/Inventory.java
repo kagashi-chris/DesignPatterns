@@ -2,5 +2,8 @@ package com.zhen.designPatterns.behavioral.Iterator;
 
 public interface Inventory {
 
-    String getInventoryIterator();
+    InventoryIterator getInventoryIterator();
+    void addInventoryItem(Item item);
+    void removeInventoryItem(Item item);
+    int getNumItems();
 }
