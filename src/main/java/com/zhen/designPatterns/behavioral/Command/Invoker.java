@@ -2,10 +2,10 @@ package com.zhen.designPatterns.behavioral.Command;
 
 public class Invoker {
 
-    ICommand on;
-    ICommand off;
+    Command on;
+    Command off;
 
-    public Invoker(ICommand on, ICommand off) {
+    public Invoker(Command on, Command off) {
         this.on = on;
         this.off = off;
     }

@@ -3,18 +3,13 @@ package com.zhen.designPatterns.behavioral.TemplateMethod;
 public class PosterTwo extends PosterAbstract{
 
     @Override
-    public void showPosterText() {
+    protected void showPosterText() {
         System.out.println("Post Two Text!");
     }
 
     @Override
-    public void showPosterPicture() {
+    protected void showPosterPicture() {
         System.out.println("Post Two Picture!");
     }
 
-    public void buildPoster()
-    {
-        showPosterText();
-        showPosterPicture();
-    }
 }

@@ -6,11 +6,24 @@ public abstract class PosterAbstract {
 
     public PosterAbstract() {
         posterTemplate = new PosterTemplate();
-        this.posterTemplate.showTitle();
+    }
+
+    protected abstract void showPosterText();
+    protected abstract void showPosterPicture();
+    public void buildPoster()
+    {
+        showPosterTitle();
+        showPosterMainImage();
+        showPosterText();
+        showPosterPicture();
+    }
+
+    private void showPosterMainImage() {
         this.posterTemplate.showMainImage();
     }
 
-    public abstract void showPosterText();
-    public abstract void showPosterPicture();
-    public abstract void buildPoster();
+    private void showPosterTitle() {
+        this.posterTemplate.showTitle();
+    }
+
 }

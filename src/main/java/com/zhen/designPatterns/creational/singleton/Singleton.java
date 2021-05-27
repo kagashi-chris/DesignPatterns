@@ -11,14 +11,12 @@ public class Singleton {
     {
     }
 
-
     public static synchronized Singleton getInstance()
     {
         if(singleton == null)
         {
             singleton = new Singleton();
         }
-        int[] rawr = new int[5];
 
         return singleton;
     }

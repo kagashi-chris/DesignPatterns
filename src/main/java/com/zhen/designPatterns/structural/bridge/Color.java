@@ -1,6 +1,5 @@
 package com.zhen.designPatterns.structural.bridge;
 
-public interface Color {
-
-    String fill();
+public enum Color {
+    BLUE, RED, WHITE, BLACK, GREEN
 }

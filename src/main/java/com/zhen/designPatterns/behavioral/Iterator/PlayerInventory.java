@@ -30,16 +30,18 @@ public class PlayerInventory implements Inventory{
 
     private class PlayerInventoryIterator implements InventoryIterator{
 
-        int currentIndex = -1;
+        private int currentIndex = -1;
 
         @Override
         public boolean hasNext() {
             if(currentIndex+1<itemListSize)
             {
+                System.out.println("true");
                 return true;
             }
             else
             {
+                System.out.println("false");
                 return false;
             }
         }
@@ -56,5 +58,7 @@ public class PlayerInventory implements Inventory{
                 return null;
             }
         }
+
+
     }
 }

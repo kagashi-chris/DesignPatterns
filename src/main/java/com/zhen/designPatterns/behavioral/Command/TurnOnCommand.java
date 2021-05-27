@@ -1,6 +1,6 @@
 package com.zhen.designPatterns.behavioral.Command;
 
-public class TurnOnCommand implements ICommand{
+public class TurnOnCommand implements Command {
 
     Receiver receiver;
 
