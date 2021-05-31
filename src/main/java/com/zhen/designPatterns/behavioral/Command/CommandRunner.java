@@ -36,10 +36,8 @@ public class CommandRunner {
         remote.buttonWasPressed(2);
         remote.buttonWasPressed(2);
         remote.buttonWasPressed(2);
-        remote.buttonWasPressed(2);
-        remote.buttonWasPressed(2);
 
 
-
+        remote.undoButtonWasPressed();
     }
 }
