@@ -13,4 +13,8 @@ public class TurnOnCommand implements Command {
         receiver.turnOn();
     }
 
+    @Override
+    public void undo() {
+        receiver.turnOff();
+    }
 }
