@@ -1,44 +1,29 @@
 package com.zhen.designPatterns.behavioral.Command;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 public class SimpleRemoteControl {
 
     Command[] commands = new Command[2];
-    List<Command> commandList = new ArrayList<>();
+    Stack<Command> commandHistoryStack = new Stack<>();
 
     public SimpleRemoteControl() {
     }
 
-    public void setCommand(int buttonNumber, Command command)
+    public void setCommand(Button button, Command command)
     {
-        if(buttonNumber > 2)
-        {
-            System.out.println("There are only 2 buttons!");
-            return;
-        }
-        else if(buttonNumber < 1)
-        {
-            System.out.println("That's not a real button!");
-            return;
-        }
-        commands[buttonNumber-1] = command;
-
+        commands[button.ordinal()] = command;
     }
 
-    public void buttonWasPressed(int buttonNumber)
+    public void buttonWasPressed(Button button)
     {
-
-        commands[buttonNumber-1].execute();
-        commandList.add(commands[buttonNumber-1]);
+        commands[button.ordinal()].execute();
+        commandHistoryStack.push(commands[button.ordinal()]);
     }
 
     public void undoButtonWasPressed()
     {
-        int lastIndex = commandList.size()-1;
-        commandList.get(lastIndex).undo();
-        commandList.remove(lastIndex);
+        commandHistoryStack.pop().undo();
     }
 
 }

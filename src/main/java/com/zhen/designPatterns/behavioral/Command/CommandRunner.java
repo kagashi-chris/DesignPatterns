@@ -15,29 +15,29 @@ public class CommandRunner {
         //same for buttonWasPressed method
 
         System.out.println("setting remote control button 1 to light on");
-        remote.setCommand(1, new LightOnCommand(light));
+        remote.setCommand(Button.ON, new LightOnCommand(light));
         System.out.println("setting remote control button 2 to light off");
-        remote.setCommand(2, new LightOffCommand(light));
+        remote.setCommand(Button.OFF, new LightOffCommand(light));
 
-        remote.buttonWasPressed(1);
-        remote.buttonWasPressed(1);
-        remote.buttonWasPressed(2);
-        remote.buttonWasPressed(2);
+        remote.buttonWasPressed(Button.ON);
+        remote.buttonWasPressed(Button.ON);
+        remote.buttonWasPressed(Button.OFF);
+        remote.buttonWasPressed(Button.OFF);
 
 
         System.out.println("setting remote control button 1 to fan on");
-        remote.setCommand(1, new FanOnCommand(fan));
+        remote.setCommand(Button.ON, new FanOnCommand(fan));
         System.out.println("setting remote control button 2 to fan off");
-        remote.setCommand(2, new FanOffCommand(fan));
+        remote.setCommand(Button.OFF, new FanOffCommand(fan));
 
-        remote.buttonWasPressed(1);
-        remote.buttonWasPressed(1);
-        remote.buttonWasPressed(1);
-        remote.buttonWasPressed(2);
-        remote.buttonWasPressed(2);
-        remote.buttonWasPressed(2);
+        remote.buttonWasPressed(Button.ON);
+        remote.buttonWasPressed(Button.ON);
+        remote.buttonWasPressed(Button.OFF);
+        remote.buttonWasPressed(Button.OFF);
+
 
 
         remote.undoButtonWasPressed();
+        fan.setFanSpeed(50);
     }
 }

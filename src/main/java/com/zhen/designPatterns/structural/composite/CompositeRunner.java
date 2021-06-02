@@ -3,28 +3,24 @@ package com.zhen.designPatterns.structural.composite;
 public class CompositeRunner {
 
     public static void main(String[] args) {
-        Square lotsOfSquares = new Square("LotsOfSquares");
-        Square notALotOfSquares = new Square("NotALotOfSquares");
-        ShapeDirectory squareDirectory = new ShapeDirectory();
-        squareDirectory.addShape(lotsOfSquares);
-        squareDirectory.addShape(notALotOfSquares);
+        Shape circle = new Circle(0);
+        circle.draw();
 
-        Square aBillionSquares = new Square("BillionsOfSquares");
-        ShapeDirectory billionSquareDirectory = new ShapeDirectory();
-        billionSquareDirectory.addShape(aBillionSquares);
-        squareDirectory.addShape(billionSquareDirectory);
+        Shape square = new Square(1);
+        square.draw();
 
-        Circle lotsOfCircles = new Circle("LotsOfCircles");
-        Circle notALotOfCircles = new Circle("NotALotOfCircles");
-        ShapeDirectory circleDirectory = new ShapeDirectory();
-        circleDirectory.addShape(lotsOfCircles);
-        circleDirectory.addShape(notALotOfCircles);
+        Picture picture = new Picture(2);
+        picture.add(circle);
+        picture.add(square);
+        picture.draw();
 
-        ShapeDirectory mainDirectory = new ShapeDirectory();
-        mainDirectory.addShape(squareDirectory);
-        mainDirectory.addShape(circleDirectory);
+        Picture picture2 = new Picture(3);
 
-        mainDirectory.drawShape();
+        Shape square4 = new Square(4);
+        picture2.add(square4);
+
+        picture2.add(picture);
+        picture2.draw();
     }
 
 

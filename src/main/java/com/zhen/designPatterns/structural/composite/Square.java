@@ -1,24 +1,22 @@
 package com.zhen.designPatterns.structural.composite;
 
-public class Square implements Shape{
+public class Square extends Shape{
 
-    private String shape = "square";
-    private String squareName;
+    private int id;
 
-    public Square(String squareName) {
-        this.squareName = squareName;
+    public Square(int id) {
+        this.id = id;
     }
 
     @Override
-    public void drawShape() {
-        System.out.println(toString());
+    public void draw() {
+        System.out.println("Drawing " + toString());
     }
 
     @Override
     public String toString() {
         return "Square{" +
-                "shape='" + shape + '\'' +
-                ", squareName='" + squareName + '\'' +
+                "id=" + id +
                 '}';
     }
 }

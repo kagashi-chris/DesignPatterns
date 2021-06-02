@@ -13,6 +13,11 @@ public class Fan {
     }
 
     public void setFanSpeed(int fanSpeed) {
+        if(Math.abs(fanSpeed - this.fanSpeed) > 10)
+        {
+            System.out.println("Fan exploded!!!");
+            System.exit(1);
+        }
         this.fanSpeed = fanSpeed;
     }
 

@@ -1,24 +1,22 @@
 package com.zhen.designPatterns.structural.composite;
 
-public class Circle implements Shape{
+public class Circle extends Shape{
 
-    private String shape = "circle";
-    private String circleName;
+    private int id;
 
-    public Circle(String circleName) {
-        this.circleName = circleName;
+    public Circle(int id) {
+        this.id = id;
     }
 
     @Override
-    public void drawShape() {
-        System.out.println(toString());
+    public void draw() {
+        System.out.println("Drawing " + toString());
     }
 
     @Override
     public String toString() {
         return "Circle{" +
-                "shape='" + shape + '\'' +
-                ", circleName='" + circleName + '\'' +
+                "id=" + id +
                 '}';
     }
 }
